@@ -1,0 +1,18 @@
+{
+  "name": "get-dev-resources",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "cd themes/hugo-geekdoc && npm i && npm run gulp default",
+    "server": "node scripts/copy-content.js && hugo server -D",
+    "build": "node scripts/copy-content.js && hugo",
+    "publish": "npm run build && cd .. && git subtree push --prefix public origin gh-pages"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ncp": "^2.0.0"
+  }
+}
